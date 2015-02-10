@@ -147,6 +147,10 @@ body {
     cursor:             pointer;
 }
 
+.nav ul li:last-child {
+  border:               none;
+}
+
 .nav .selected,
 .nav ul li:hover {
     color:              #fff;
