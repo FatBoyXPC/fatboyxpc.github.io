@@ -203,3 +203,37 @@ body {
 .content a:hover {
     text-decoration:    underline;
 }
+
+.topics {
+    margin-left:        10px;
+}
+
+.topics > li {
+    font-size:          14px;
+}
+
+.topics > li span {
+    font-weight:        bold;
+}
+
+.topics > li span:after {
+    content:            ": ";
+}
+
+.items {
+    display:            inline;
+    margin-left:        5px;
+}
+
+.items > li {
+    font-size:          12px;
+    display:            inline;
+}
+
+.items > li:after {
+    content:            ", ";
+}
+
+.items > li:last-child:after {
+    content:            none;
+}
