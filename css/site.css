@@ -13,8 +13,6 @@
 }
 
 body {
-/*    background-color:   #a00; bottom right*/
-/*    background-color:   #f70; top left*/
     background-color:   #d50;
     background-color:   #c30;
     background:         -webkit-linear-gradient(-45deg, #f70 0%, #d50 30%, #c30 70%, #a00 100%);
@@ -37,7 +35,6 @@ body {
 .header {
     height:             150px;
     width:              375px;
-/*    background-color:   #c00;*/
     background:         -webkit-linear-gradient(-75deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 32%);
     background:         -moz-linear-gradient(-75deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 32%);
     background:         -o-linear-gradient(-75deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 32%);
@@ -54,7 +51,6 @@ body {
 .image {
     height:             185px;
     width:              385px;
-/*    background-color:   #0f0;*/
     background:         -webkit-linear-gradient(-80deg, rgba(255, 150, 0, 0.6) 0%, rgba(255, 255, 255, 0) 10%);
     background:         -moz-linear-gradient(-80deg, rgba(255, 150, 0, 0.6) 0%, rgba(255, 255, 255, 0) 10%);
     background:         -o-linear-gradient(-80deg, rgba(255, 150, 0, 0.6) 0%, rgba(255, 255, 255, 0) 10%);
@@ -192,9 +188,7 @@ body {
 
 .content-body {
     height:             230px;
-/*    border:             1px solid #000;*/
     overflow-y:         auto;
-    /*text-shadow:        1px 1px #777;*/
 }
 
 .content-body p {
