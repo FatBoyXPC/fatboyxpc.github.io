@@ -142,17 +142,27 @@ body {
 }
 
 .nav ul li {
-    padding:            10px 0;
     border-bottom:      1px solid rgba(255, 255, 255, 0.3);
-    cursor:             pointer;
 }
 
 .nav ul li:last-child {
   border:               none;
 }
 
-.nav .selected,
-.nav ul li:hover {
+.nav ul li a,
+.nav ul li a:visited,
+.nav ul li a:active {
+    padding:            10px 0;
+    color:              #aaa;
+    text-decoration:    none;
+    display:            inline-block;
+}
+
+.nav .selected a,
+.nav .selected a:visited,
+.nav .selected a:active,
+.nav ul li a:hover,
+.nav .selected a:hover {
     color:              #fff;
 }
 
