@@ -216,24 +216,9 @@ body {
     text-decoration:    underline;
 }
 
-.topics {
-    margin-left:        10px;
-}
-
-.topics > li {
-    font-size:          14px;
-}
-
-.topics > li span {
-    font-weight:        bold;
-}
-
-.topics > li span:after {
-    content:            ": ";
-}
-
 .buzzwords {
-    display:            inline;
+    margin-left:        10px;
+    display:            inline-block;
 }
 
 .buzzwords > li {
