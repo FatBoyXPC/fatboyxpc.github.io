@@ -232,20 +232,19 @@ body {
     content:            ": ";
 }
 
-.items {
-    display:            inline;
-    margin-left:        5px;
-}
-
-.items > li {
-    font-size:          12px;
+.buzzwords {
     display:            inline;
 }
 
-.items > li:after {
+.buzzwords > li {
+    font-size:          14px;
+    display:            inline;
+}
+
+.buzzwords > li:after {
     content:            ", ";
 }
 
-.items > li:last-child:after {
+.buzzwords > li:last-child:after {
     content:            none;
 }
