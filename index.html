@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>FatBoyXPC</title>
         <link rel="stylesheet" type="text/css" href="/css/reset.css">
         <link rel="stylesheet" type="text/css" href="/css/site.css">
+        <link rel="stylesheet" type="text/css" href="/css/mobile.css">
+        <link rel="stylesheet" type="text/css" href="/css/large.css" media="(min-width: 1000px">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
+                $('.nav li a').each(function (index, el) {
+                    var target = $(el).attr('href').replace('#', '');
+                    var html = $('.content-body .' + target).html();
+
+                    $('.nav .content.' + target).html(html);
+                });
+
                 function toggleContent(selector, speed) {
+                    selector = selector.replace('#', '');
+
                     $('.content-body').children().hide();
-                    $('.content-body ' + selector + '-tab').show(speed);
+                    $('.content-body .' + selector).show(speed);
+
+                    $('.nav .content').hide();
+                    $('.nav .content.' + selector).addClass('show');
+                    $('.nav .content.' + selector).show(speed);
+
+                    $('.nav li').removeClass('selected');
+                    $('[href=#' + selector + ']').parent('li').addClass('selected');
                 }
 
-                $('.content-body').children().hide();
-
-                var hash = window.location.hash;
-
-                if (hash) {
-                    $('.nav li').removeClass('selected');
-                    $('[href=' + hash + ']').parent('li').addClass('selected');
+                function route() {
+                    var hash = window.location.hash || '#home';
 
                     toggleContent(hash);
-                } else {
-                    toggleContent('#home');
                 }
                 
-                $('.nav li a').click(function(e) {
-                    $('.nav li').removeClass('selected');
-                    var selector = $(this).attr('href');
-                    $(this).parent('li').addClass('selected');
-
-                    toggleContent(selector, 100);
-                });
+                route();
+                $(window).on('hashchange', route);
             });
         </script>
     </head>
@@ -51,10 +58,22 @@
             <div class="nav">
                 <div class="inner">
                     <ul>
-                        <li class="selected"><a href="#home">HOME</a></li>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#knowledge">KNOWLEDGE</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li class="selected">
+                            <a href="#home">HOME</a>
+                            <div class="content home"></div>
+                        </li>
+                        <li>
+                            <a href="#about">ABOUT</a>
+                            <div class="content about"></div>
+                        </li>
+                        <li>
+                            <a href="#knowledge">KNOWLEDGE</a>
+                            <div class="content knowledge"></div>
+                        </li>
+                        <li>
+                            <a href="#contact">CONTACT</a>
+                            <div class="content contact"></div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +83,7 @@
                         <p>Because if it wasn't fun, I wouldn't be here</p>
                     </div>
                     <div class="content-body">
-                        <div id="home-tab">
+                        <div class="home">
                             <p>Hey guys, this is FatBoyXPC.</p>
                             <p>
                                 Luckily for both of us, I'm not really <i>that</i>
@@ -76,7 +95,7 @@
                             </p>
                             <p>Stay tuned.</p>
                         </div>
-                        <div id="about-tab">
+                        <div class="about">
                             <p>My real name is James LaChance.</p>
                             <p>
                             As stated on the home page, I'm not quite sure what
@@ -89,19 +108,19 @@
                             you want to get a real sample of my work.
                         </p>
                         </div>
-                        <div id="knowledge-tab">
+                        <div class="knowledge">
                             <p>
                                 I mostly work with <strong>PHP &amp; MySQL</strong>,
                                 however, here's a list of <i>buzzwords</i>
                                 relevant to me:
-                                
+
                                 <ul class="buzzwords">
                                     <li>NodeJS</li>
                                     <li>LESS</li>
                                     <li>HTML5</li>
                                     <li>CSS3</li>
                                     <li>MongoDB</li>
-                                    <li>Zend Framework 1 & 2</li>
+                                    <li>Zend Framework 1 &amp; 2</li>
                                     <li>Laravel</li>
                                     <li>CodeIgniter</li>
                                     <li>ActionHero.JS</li>
@@ -117,7 +136,7 @@
                                 </ul>
                             </p>
                         </div>
-                        <div id="contact-tab">
+                        <div class="contact">
                             <p>Everything is FatBoyXPC</p>
                             <p>Social Media, Gmail, XFire, Steam, etc. On any website, if the username FatBoyXPC exists, it's (most likely) me.</p>
                             <p>Email: <a href="mailto:fatboyxpc@gmail.com">FatBoyXPC [at] gmail [dot] com</a></p>
